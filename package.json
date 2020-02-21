@@ -1,0 +1,22 @@
+{
+	"name": "lan-chat",
+	"version": "1.0.0",
+	"description": "A P2P/socket.io Web Browser Chat in Local Network",
+	"main": "server.js",
+	"scripts": {
+		"dev": "node server.js"
+	},
+	"keywords": [
+		"p2p",
+		"chat",
+		"lan"
+	],
+	"author": "Asiqur Rahman",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"ip": "^1.1.5",
+		"open": "^7.0.2",
+		"socket.io": "^2.3.0"
+	}
+}
