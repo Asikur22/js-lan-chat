@@ -9,9 +9,9 @@ connection = [];
 
 server.listen(process.env.PORT || port);
 
-// var ip = require("ip").address();
-// console.log(ip);
-// open("http://" + ip + ":" + port, { app: "google chrome" });
+var ip = require("ip").address();
+console.log(ip);
+open("http://" + ip + ":" + port, { app: "google chrome" });
 
 app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/index.html");
