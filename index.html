@@ -100,10 +100,16 @@
 
 			socket.on('new message', function (data) {
 				var html = '';
+				var msg = data.msg;
+
+				if (data.msgURL) {
+					msg = '<a href="' + data.msg + '" target="_blank">' + data.msg + '</a>';
+				}
+
 				if (data.user == currentUser) {
-					html = '<div class="well text-success"><strong>You</strong>: ' + data.msg + '</div>';
+					html = '<div class="well text-success"><strong>You</strong>: ' + msg + '</div>';
 				} else {
-					html = '<div class="well"><strong>' + data.user + '</strong>: ' + data.msg + '</div>';
+					html = '<div class="well"><strong>' + data.user + '</strong>: ' + msg + '</div>';
 				}
 				$chat.append(html);
 			});

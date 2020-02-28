@@ -1,4 +1,5 @@
 var open = require("open");
+var isURL = require("is-url");
 var express = require("express");
 var app = express();
 var server = require("http").createServer(app);
@@ -30,7 +31,11 @@ io.sockets.on("connection", function(socket) {
 	});
 
 	socket.on("send message", function(data) {
-		io.sockets.emit("new message", { msg: data, user: socket.username });
+		io.sockets.emit("new message", {
+			msgURL: isURL(data),
+			msg: data,
+			user: socket.username
+		});
 	});
 
 	socket.on("new user", function(data, callback) {
