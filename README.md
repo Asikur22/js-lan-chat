@@ -1,2 +1,2 @@
-# lan-chat
+# js-lan-chat
 A Chat System in Local Network
